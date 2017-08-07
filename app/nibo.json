@@ -6,7 +6,7 @@
     "pt_BR": "O Nibo é um programa de gestão financeira simples, porém robusto, para pequenas e médias empresas. Dentre outras coisas, permite a unificação dos formatos de arquivos contábeis e seu compartilhamento entre empresa e contador, fazendo um meio de campo para você perder menos tempo. Assim, todo gestor pode ter suas finanças e contabilidade online, de forma organizada e eficiente.",
     "en": "Nibo is a simple but powerful financial management app for small and medium-sized enterprises. Among other things, it allows the integration of accounting file formats and its sharing between company and accountant, acting as the middleman so you waste less time. This way, managers can have their finances and accounting online, in an organized and efficient way."
 	},
-  "website": "www.nibo.com.br",
+  "website": "https://www.nibo.com.br",
   "signup_url": "https://empresa.nibo.com.br/User/LogOn",
   "api_base_uri": {
     "production": {
@@ -15,22 +15,21 @@
 			"default": true
 		}
   },
-   "authentication": {
-		"type": "oauth_2", 
+  "authentication": {
+		"type": "oauth_2",
     "oauth_access_fields": {
-      "client_id": "1EC194F5-BA8C-4994-85E5-070C17A56862",
-			"client_secret": "62CFBE75A640485A8ADAA40DA3B01D7791447B7D02A141C988",
+      "client_id": "client_id_para_a_pluga",
+			"client_secret": "client_secret_para_a_pluga",
       "authorize_url": "https://passport.nibo.com.br/authorize",
       "access_token_url": "https://passport.nibo.com.br/token",
       "refresh_token_url": "https://passport.nibo.com.br/token",
       "redirect_uri": "https://homologdotmanage.pluga.co/oauth2/nibo",
       "access_token_placement": "Authorization: Bearer {{access_token}}",
-      "access_token_on_query_string_replacement": "token", 
+      "access_token_on_query_string_replacement": "token",
       "scope": [],
       "response_type": "code",
       "approval_prompt": "force",
       "access_type": "offline"
     }
-  }
   }
 }

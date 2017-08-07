@@ -7,10 +7,10 @@
   "description": {
     "pt_BR": "criar um novo cliente no Nibo",
     "en": "create a new customer in Nibo"
-  }, 
+  },
   "action_fields": {
   	"fields": [
-	{
+	    {
         "key": "organization_id",
         "name": { "pt_BR": "Empresa", "en": "Organization" },
         "description": {
@@ -47,7 +47,8 @@
         "advanced": false,
         "field_type": "custom",
         "data_type": "string"
-      }]
+      }
+    ]
   },
   "request": {
   	"method_name": "/customers",
