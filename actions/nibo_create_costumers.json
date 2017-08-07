@@ -1,0 +1,61 @@
+{
+	"name": {
+    "pt_BR": "criar um novo cliente no Nibo",
+    "en": "create a new customer in Nibo"
+  },
+  "action_key": "customers",
+  "description": {
+    "pt_BR": "criar um novo cliente no Nibo",
+    "en": "create a new customer in Nibo"
+  }, 
+  "action_fields": {
+  	"fields": [
+	{
+        "key": "organization_id",
+        "name": { "pt_BR": "Empresa", "en": "Organization" },
+        "description": {
+          "pt_BR": "Empresa",
+          "en": "Organization"
+        },
+        "label": {
+          "pt_BR": "Atribuído",
+          "en": "Assignee"
+        },
+        "required": false,
+        "visible": true,
+        "advanced": true,
+        "field_type": "dropdown",
+        "data_type": "string",
+        "list": {
+          "type": "remote",
+          "helper_method": "organization_list"
+        },
+        "placeholder": {
+          "pt_BR": "Selecione uma empresa",
+          "en": "Select an organization"
+        }
+      },
+      {
+      	"key": "name",
+        "name": { "pt_BR": "Nome", "en": "Name" },
+        "description": {
+        	"pt_BR": "Nome do cliente.",
+          "en": "Customer's Name"
+        },
+        "required": true,
+        "visible": true,
+        "advanced": false,
+        "field_type": "custom",
+        "data_type": "string"
+      }]
+  },
+  "request": {
+  	"method_name": "/customers",
+    "json_api": true,
+    "error_fields": ["error", "description"],
+    "pre_hooks": {
+      "hooks": [],
+      "append_fields": []
+    }
+  }
+}
