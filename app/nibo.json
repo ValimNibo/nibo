@@ -10,7 +10,7 @@
   "signup_url": "https://empresa.nibo.com.br/User/LogOn",
   "api_base_uri": {
     "production": {
-			"uri": "http://apinibolocal.azure-api.net/local/v1",
+      "uri": "https://api.nibo.com.br/empresas/v1",
 			"label": "Local",
 			"default": true
 		}
