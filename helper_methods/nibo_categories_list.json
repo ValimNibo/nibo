@@ -1,0 +1,22 @@
+{
+  "name": "Listar categorias",
+  "helper_method_key": "nibo_categories_list",
+  "requests": [
+    {
+      "method_name": "/schedules/categories",
+      "params": {
+        "Organization": ?????
+      },
+      "mapping": {
+        "label": {
+          "fields": [
+            "name"
+          ]
+        },
+        "value": {
+          "field": "id"
+        }
+      }
+    }
+  ]
+} 
