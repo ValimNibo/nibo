@@ -152,7 +152,7 @@
           "pt_BR": "",
           "en": ""
         }
-      }
+      },
       {
         "key": "categoryId",
         "name": {
@@ -175,12 +175,12 @@
         "placeholder": {
           "pt_BR": "Selecione uma categoria",
           "en": "Select a category"
-        }
+        },
         "label": {
           "pt_BR": "",
           "en": ""
         }
-      }
+      },
       {
         "key": "costCenterId",
         "name": {
@@ -203,7 +203,7 @@
         "placeholder": {
           "pt_BR": "Selecione um centro de custo",
           "en": "Select a cost center"
-        }
+        },
         "label": {
           "pt_BR": "",
           "en": ""
