@@ -24,12 +24,9 @@
       "access_token_url": "https://passport.nibo.com.br/token",
       "refresh_token_url": "https://passport.nibo.com.br/token",
       "redirect_uri": "https://homologdotmanage.pluga.co/oauth2/nibo",
-      "access_token_placement": "Authorization: Bearer {{access_token}}",
-      "access_token_on_query_string_replacement": "token",
+      "access_token_placement": "header_bearer",
       "scope": [],
-      "response_type": "code",
-      "approval_prompt": "force",
-      "access_type": "offline"
+      "response_type": "code"
     }
   }
 }
