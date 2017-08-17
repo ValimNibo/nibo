@@ -217,7 +217,7 @@
             "verb": "get",
             "method_name": "/suppliers",
             "params": [
-              {"field": "$filter", "value": "document/number eq '{suppliers_email}'", "type": "string"}
+              {"field": "$filter", "value": "document/number eq '{suppliers_doc}' or email eq '{suppliers_email}'", "type": "string"}
             ]
           }
         },

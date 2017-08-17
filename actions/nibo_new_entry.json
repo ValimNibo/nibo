@@ -242,7 +242,7 @@
             "verb": "get",
             "method_name": "/customers",
             "params": [
-              {"field": "$filter", "value": "document/number eq '{customer_email}'", "type": "string"}
+              {"field": "$filter", "value": "document/number eq '{customer_doc}' or email eq '{customer_email}'", "type": "string"}
             ]
           }
         },
