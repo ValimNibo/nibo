@@ -82,6 +82,48 @@
         }
       },
       {
+        "key": "suppliers_name",
+        "name": {"pt_BR": "nome do fornecedor", "en": "suppliers name"},
+        "description": {
+          "pt_BR": "Nome do fornecedor.",
+          "en": "suppliers name."
+        },
+        "required": false,
+        "visible": true,
+        "advanced": false,
+        "field_type": "custom",
+        "data_type": "string",
+        "not_include_field_in_request": true
+      },
+       {
+        "key": "suppliers_email",
+        "name": {"pt_BR": "e-mail do fornecedor", "en": "suppliers e-mail"},
+        "description": {
+          "pt_BR": "E-mail do fornecedor.",
+          "en": "Suppliers e-mail."
+        },
+        "required": false,
+        "visible": true,
+        "advanced": false,
+        "field_type": "custom",
+        "data_type": "string",
+        "not_include_field_in_request": true
+      },
+       {
+        "key": "suppliers_doc",
+        "name": {"pt_BR": "documento do fornecedor", "en": "suppliers doc"},
+        "description": {
+          "pt_BR": "Documento do fornecedor.",
+          "en": "Suppliers doc."
+        },
+        "required": false,
+        "visible": true,
+        "advanced": false,
+        "field_type": "custom",
+        "data_type": "string",
+        "not_include_field_in_request": true
+      },
+      {
         "key":"date",
         "name":{
           "pt_BR":"Data da entrada",
@@ -103,54 +145,6 @@
         "label":{
           "pt_BR":"",
           "en":""
-        }
-      },
-      {
-        "key":"supplier.Email",
-        "name":{
-          "pt_BR":"E-mail do fornecedor",
-          "en":"Supplier e-mail"
-        },
-        "description":{
-          "pt_BR":"O fornecedor, neste caso, se refere ao seu próprio meio de pagamento.",
-          "en":"In this case, the supplier refers to your own payment gateway."
-        },
-        "required":true,
-        "visible":true,
-        "advanced":true,
-        "field_type":"custom",
-        "data_type":"string",
-        "placeholder":{
-          "pt_BR":"",
-          "en":""
-        },
-        "label":{
-          "pt_BR":"",
-          "en":""
-        }
-      },
-      {
-        "key": "supplier.Name",
-        "name": {
-          "pt_BR": "Nome do fornecedor",
-          "en": "Supplier name"
-        },
-        "description": {
-          "pt_BR": "O fornecedor, neste caso, se refere ao seu próprio meio de pagamento.",
-          "en": "In this case, the supplier refers to your own payment gateway."
-        },
-        "required": true,
-        "visible": true,
-        "advanced": true,
-        "field_type": "custom",
-        "data_type": "string",
-        "placeholder": {
-          "pt_BR": "",
-          "en": ""
-        },
-        "label": {
-          "pt_BR": "",
-          "en": ""
         }
       },
       {
@@ -210,5 +204,41 @@
         }
       }
     ]
+  },
+  "request": {
+  	"method_name": "/suppliers",
+    "json_api": true,
+    "error_fields": ["error", "description"],
+    "pre_hooks": {
+      "hooks": [
+        {
+          "name": "Buscar fornecedor",
+          "request": {
+            "verb": "get",
+            "method_name": "/suppliers",
+            "params": [
+              {"field": "$filter", "value": "document/number eq '{suppliers_doc}' or email eq '{suppliers_email}'", "type": "string"}
+            ]
+          }
+        },
+        {
+          "name": "Criar fornecedor",
+          "conditions": [[
+            {"field": "id", "condition": "equal", "value": null}
+          ]],
+          "request": {
+            "verb": "post",
+            "method_name": "/suppliers",
+            "params": [
+              {"field": "email", "value": "{suppliers_email}"},
+              {"field": "nome", "value": "{suppliers_name}"}
+            ]
+          }
+        }
+      ],
+      "append_fields": [
+        {"field": "stakeholderId", "value": "{id}", "type": "string"}
+      ]
+    }
   }
 }
