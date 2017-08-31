@@ -5,7 +5,7 @@
     {
       "method_name": "/schedules/categories",
       "params": {
-        "Organization": ?????
+        "Organization": "?????"
       },
       "mapping": {
         "label": {
@@ -19,4 +19,4 @@
       }
     }
   ]
-} 
+}
