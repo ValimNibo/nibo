@@ -11,7 +11,7 @@
   "action_fields": {
   	"fields": [
 	    {
-        "key": "organization_id",
+        "key": "Organization",
         "name": { "pt_BR": "Empresa", "en": "Organization" },
         "description": {
           "pt_BR": "Empresa",
@@ -21,9 +21,10 @@
           "pt_BR": "Atribuído",
           "en": "Assignee"
         },
-        "required": false,
+        "required": true,
         "visible": true,
-        "advanced": true,
+        "advanced": false,
+        "not_include_field_in_request" : true,
         "field_type": "dropdown",
         "data_type": "string",
         "list": {
