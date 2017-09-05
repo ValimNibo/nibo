@@ -5,6 +5,32 @@
   "action_fields":{
     "fields":[
       {
+        "key": "Organization",
+        "name": { "pt_BR": "Empresa", "en": "Organization" },
+        "description": {
+          "pt_BR": "Empresa",
+          "en": "Organization"
+        },
+        "label": {
+          "pt_BR": "Atribuído",
+          "en": "Assignee"
+        },
+        "required": true,
+        "visible": true,
+        "advanced": false,
+        "not_include_field_in_request" : true,
+        "field_type": "dropdown",
+        "data_type": "string",
+        "list": {
+          "type": "remote",
+          "helper_method": "organization_list"
+        },
+        "placeholder": {
+          "pt_BR": "Selecione uma empresa",
+          "en": "Select an organization"
+        }
+      },
+      {
         "key": "description",
         "name": {
           "pt_BR": "descrição",
