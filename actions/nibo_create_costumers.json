@@ -11,7 +11,7 @@
   "action_fields": {
   	"fields": [
 	    {
-        "key": "organization_id",
+        "key": "Organization",
         "name": { "pt_BR": "Empresa", "en": "Organization" },
         "description": {
           "pt_BR": "Empresa",
