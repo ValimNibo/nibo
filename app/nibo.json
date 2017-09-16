@@ -27,6 +27,9 @@
       "access_token_placement": "header_bearer",
       "scope": [],
       "response_type": "code"
+    },
+    "ping_request": {
+      "method_name": "/organizations"
     }
   }
 }
