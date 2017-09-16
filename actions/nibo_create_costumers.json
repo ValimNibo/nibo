@@ -52,7 +52,7 @@
     ]
   },
   "request": {
-  	"method_name": "/customers",
+    "method_name": "/customers?Organization={Organization}",
     "json_api": true,
     "error_fields": ["error", "description"],
     "pre_hooks": {
