@@ -92,12 +92,13 @@
             "params": [
               {"field": "Organization", "value": "{Organization}", "type": "string"},
               {"field": "$filter", "value": "email eq '{email}'", "type": "string"}
-            ]
+            ],
+            "response_field": ["items"]
           }
         }
       ],
       "append_fields": [
-        {"field": "id", "value": ["items", 0, "id"], "type": "string"}
+        {"field": "id", "value": "{id}", "type": "string"}
       ]
     },
     "conditions": [[
