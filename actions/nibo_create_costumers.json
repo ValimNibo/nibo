@@ -1,5 +1,5 @@
 {
-	"name": {
+  "name": {
     "pt_BR": "criar um novo cliente no Nibo",
     "en": "create a new customer in Nibo"
   },
@@ -9,8 +9,22 @@
     "en": "create a new customer in Nibo"
   },
   "action_fields": {
-  	"fields": [
-	    {
+    "fields": [
+      {
+        "key": "id",
+        "name": { "pt_BR": "ID", "en": "ID" },
+        "description": {
+          "pt_BR": "ID do cliente.",
+          "en": "Customer's ID"
+        },
+        "required": false,
+        "visible": false,
+        "advanced": false,
+        "field_type": "custom",
+        "data_type": "string",
+        "not_include_field_in_request": true
+      },
+      {
         "key": "Organization",
         "name": { "pt_BR": "Empresa", "en": "Organization" },
         "description": {
@@ -37,11 +51,24 @@
         }
       },
       {
-      	"key": "name",
+        "key": "name",
         "name": { "pt_BR": "Nome", "en": "Name" },
         "description": {
-        	"pt_BR": "Nome do cliente.",
+          "pt_BR": "Nome do cliente.",
           "en": "Customer's Name"
+        },
+        "required": true,
+        "visible": true,
+        "advanced": false,
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "email",
+        "name": { "pt_BR": "Email", "en": "Email" },
+        "description": {
+          "pt_BR": "Email do cliente.",
+          "en": "Customer's Email"
         },
         "required": true,
         "visible": true,
@@ -56,8 +83,25 @@
     "json_api": true,
     "error_fields": ["error", "description"],
     "pre_hooks": {
-      "hooks": [],
-      "append_fields": []
-    }
+      "hooks": [
+        {
+          "name": "Buscar cliente",
+          "request": {
+            "verb": "get",
+            "method_name": "/customers",
+            "params": [
+              {"field": "Organization", "value": "{Organization}", "type": "string"},
+              {"field": "$filter", "value": "email eq '{email}'", "type": "string"}
+            ]
+          }
+        }
+      ],
+      "append_fields": [
+        {"field": "id", "value": ["items", 0, "id"], "type": "string"}
+      ]
+    },
+    "conditions": [[
+      {"field": "id", "condition": "equal", "value": null}
+    ]]
   }
 }
