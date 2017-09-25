@@ -1,25 +1,25 @@
 {
-  "name": "Nibo V2",
+  "name": "Nibo",
   "app_id": "nibo_v2",
   "color": "#e9eced",
   "description": {
     "pt_BR": "O Nibo é um programa de gestão financeira simples, porém robusto, para pequenas e médias empresas. Dentre outras coisas, permite a unificação dos formatos de arquivos contábeis e seu compartilhamento entre empresa e contador, fazendo um meio de campo para você perder menos tempo. Assim, todo gestor pode ter suas finanças e contabilidade online, de forma organizada e eficiente.",
     "en": "Nibo is a simple but powerful financial management app for small and medium-sized enterprises. Among other things, it allows the integration of accounting file formats and its sharing between company and accountant, acting as the middleman so you waste less time. This way, managers can have their finances and accounting online, in an organized and efficient way."
-	},
+  },
   "website": "https://www.nibo.com.br",
   "signup_url": "https://empresa.nibo.com.br/User/LogOn",
   "api_base_uri": {
     "production": {
       "uri": "https://api-empresa.nibo.com.br",
-			"label": "Local",
-			"default": true
-		}
+      "label": "Local",
+      "default": true
+    }
   },
   "authentication": {
-		"type": "oauth_2",
+    "type": "oauth_2",
     "oauth_access_fields": {
       "client_id": "client_id_para_a_pluga",
-			"client_secret": "client_secret_para_a_pluga",
+      "client_secret": "client_secret_para_a_pluga",
       "authorize_url": "https://passport.nibo.com.br/authorize",
       "access_token_url": "https://passport.nibo.com.br/token",
       "refresh_token_url": "https://passport.nibo.com.br/token",
