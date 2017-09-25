@@ -1,11 +1,12 @@
 {
   "name": "Listar contas",
-  "helper_method_key": "nibo_accounts_list",
+  "helper_method_key": "nibo_v2_accounts",
   "requests": [
     {
       "method_name": "/accounts",
+      "response_field": "items",
       "params": {
-        "Organization": "?????"
+        "Organization": "{Organization}"
       },
       "mapping": {
         "label": {

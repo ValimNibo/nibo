@@ -1,11 +1,12 @@
 {
   "name": "Listar categorias",
-  "helper_method_key": "nibo_categories_list",
+  "helper_method_key": "nibo_v2_categories",
   "requests": [
     {
       "method_name": "/schedules/categories",
+      "response_field": "items",
       "params": {
-        "Organization": "?????"
+        "Organization": "{Organization}"
       },
       "mapping": {
         "label": {

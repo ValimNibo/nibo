@@ -18,12 +18,12 @@
         "required": true,
         "visible": true,
         "advanced": false,
-        "not_include_field_in_request" : true,
+        "not_include_field_in_request": true,
         "field_type": "dropdown",
         "data_type": "string",
         "list": {
           "type": "remote",
-          "helper_method": "organization_list"
+          "helper_method": "nibo_v2_organizations"
         },
         "placeholder": {
           "pt_BR": "Selecione uma empresa",
@@ -239,7 +239,7 @@
         "data_type": "string",
         "list": {
           "type": "remote",
-          "helper_method": "nibo_category_list"
+          "helper_method": "nibo_v2_categories"
         },
         "placeholder": {
           "pt_BR": "Selecione uma categoria",
@@ -267,7 +267,7 @@
         "data_type": "string",
         "list": {
           "type": "remote",
-          "helper_method": "nibo_costCenter_list"
+          "helper_method": "nibo_v2_cost_centers"
         },
         "placeholder": {
           "pt_BR": "Selecione um centro de custo",

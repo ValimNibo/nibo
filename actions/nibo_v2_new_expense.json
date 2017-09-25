@@ -23,7 +23,7 @@
         "data_type": "string",
         "list": {
           "type": "remote",
-          "helper_method": "organization_list"
+          "helper_method": "nibo_v2_organizations"
         },
         "placeholder": {
           "pt_BR": "Selecione uma empresa",
@@ -46,7 +46,7 @@
         "data_string":"string",
         "list":{
           "type":"remote",
-          "helper_method":"nibo_accounts_list"
+          "helper_method":"nibo_v2_accounts"
         },
         "name":{
           "pt_BR":"Sua conta no Nibo",
@@ -190,7 +190,7 @@
         "data_type": "string",
         "list": {
           "type": "remote",
-          "helper_method": "nibo_category_list"
+          "helper_method": "nibo_v2_categories"
         },
         "placeholder": {
           "pt_BR": "Selecione uma categoria",
@@ -218,7 +218,7 @@
         "data_type": "string",
         "list": {
           "type": "remote",
-          "helper_method": "nibo_costCenter_list"
+          "helper_method": "nibo_v2_cost_centers"
         },
         "placeholder": {
           "pt_BR": "Selecione um centro de custo",

@@ -1,11 +1,12 @@
 {
   "name": "Listar centros de custo",
-  "helper_method_key": "nibo_costCenter_list",
+  "helper_method_key": "nibo_v2_cost_centers",
   "requests": [
     {
       "method_name": "/costcenters",
+      "response_field": "items",
       "params": {
-        "Organization": "?????"
+        "Organization": "{Organization}"
       },
       "mapping": {
         "label": {

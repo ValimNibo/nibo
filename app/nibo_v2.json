@@ -1,5 +1,5 @@
 {
-  "name": "Nibo",
+  "name": "Nibo V2",
   "app_id": "nibo_v2",
   "color": "#e9eced",
   "description": {
@@ -23,7 +23,7 @@
       "authorize_url": "https://passport.nibo.com.br/authorize",
       "access_token_url": "https://passport.nibo.com.br/token",
       "refresh_token_url": "https://passport.nibo.com.br/token",
-      "redirect_uri": "https://homologdotmanagedot.pluga.co/oauth2/nibo",
+      "redirect_uri": "https://homologdotmanagedot.pluga.co/oauth2/nibo_v2",
       "access_token_placement": "header_bearer",
       "scope": [],
       "response_type": "code"
