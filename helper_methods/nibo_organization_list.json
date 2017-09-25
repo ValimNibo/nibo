@@ -1,6 +1,6 @@
 {
   "name": "lista de empresas",
-  "helper_method_key": "organization_list",
+  "helper_method_key": "nibo_organization_list",
   "requests": [
   	{
       "method_name": "/organizations",
