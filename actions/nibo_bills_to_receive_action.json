@@ -1,13 +1,14 @@
 {
   "name": {
-    "pt_BR": "criar um novo recebimento no Nibo",
-    "en": "create a new receipt in Nibo"
+    "pt_BR": "criar um novo contas a receber no Nibo",
+    "en": "create a new bills to receive in Nibo"
   },
-  "action_key": "receipts",
+  "action_key": "bills_to_receive",
   "description": {
-    "pt_BR": "criar um novo recebimento no Nibo",
-    "en": "create a new receipt in Nibo"
+    "pt_BR": "criar um novo contas a receber no Nibo",
+    "en": "create a new bills to receive in Nibo"
   },
+  "description":"É gerado um contas a receber no Nibo.",
   "action_fields":{
     "fields":[
       {
@@ -35,26 +36,94 @@
         }
       },
       {
-        "key": "accountId",
-        "label":{
-          "pt_BR": "Conta",
-          "en": "Account"
+        "key": "description",
+        "name": {
+          "pt_BR": "descrição",
+          "en": "description"
         },
-        "description":{
-          "pt_BR": "Conta existente na Nibo no qual será vinculada as entradas",
-          "en": "Nibo account that will be relation with the entries"
+        "description": {
+          "pt_BR": "Identifique quem é o cliente, associado ao recebível, no Nibo. Como padrão usamos o e-mail do seu cliente, mas você pode editá-lo.",
+          "en": "Identify who is the client, associate to income on Nibo. As default we use client e-mail, but feel free to edit it."
         },
         "visible": true,
         "required": true,
-        "field_type": "dropdown",
-        "data_string": "string",
-        "list": {
-          "type": "remote",
-          "helper_method": "nibo_accounts_helper"
-        },
+        "field_type": "custom",
+        "data_type": "string",
         "placeholder": {
-          "pt_BR": "Selecionar conta",
-          "en": "Select account"
+          "pt_BR": "Selecione descrição",
+          "en": "Select description"
+        }
+      },
+      {
+        "key": "reference",
+        "name": {
+          "pt_BR": "referência",
+          "en": "reference"
+        },
+        "reference": {
+          "pt_BR": "referência",
+          "en": "reference"
+        },
+        "visible": true,
+        "required": true,
+        "field_type": "custom",
+        "data_type": "string",
+        "placeholder": {
+          "pt_BR": "Selecione referência",
+          "en": "Select reference"
+        }
+      },
+      {
+        "key": "value",
+        "name": {
+          "pt_BR": "Valor",
+          "en": "value"
+        },
+        "description": {
+          "pt_BR": "Valor que será incluído na sua conta do Nibo.",
+          "en": "Value that will be included in your account on Nibo."
+        },
+        "visible": true,
+        "required": true,
+        "field_type": "custom",
+        "data_type": "decimal",
+        "placeholder": {
+          "pt_BR": "Selecione valor",
+          "en": "Select value"
+        }
+      },
+      {
+        "key":"scheduleDate",
+        "name":{
+          "pt_BR":"Agendamento",
+          "en":"Schedule"
+        },
+        "description":{
+          "pt_BR":"O valor sempre será em dias. Ou seja, se for 30, o agendamento será para D+30, onde D é data de quando a transação acontenceu. Veja \"Data de Referência em campos avançados\"",
+          "en":"Days to schedule be completed. For example, if the value is 20, the schedule will be D+30, where D is base data. See reference date."
+        },
+        "required": true,
+        "visible": true,
+        "field_type":"integer",
+        "data_type":"integer"
+      },
+      {
+        "key": "dueDate",
+        "name": {
+          "pt_BR": "Data de referência",
+          "en": "Reference date"
+        },
+        "description": {
+          "pt_BR": "Campo de referência da data de quando a transação foi aprovada.",
+          "en": "Reference date when the transaction was approved"
+        },
+        "visible": true,
+        "required": true,
+        "field_type": "custom",
+        "data_type": "string",
+        "placeholder": {
+          "pt_BR": "Selecione data",
+          "en": "Select date"
         }
       },
       {
@@ -101,63 +170,6 @@
         "placeholder": {
           "pt_BR": "Selecione um centro de custo",
           "en": "Select a cost center"
-        }
-      },
-      {
-        "key": "value",
-        "name": {
-          "pt_BR": "Valor",
-          "en": "value"
-        },
-        "description": {
-          "pt_BR": "Valor que será incluído na sua conta do Nibo.",
-          "en": "Value that will be included in your account on Nibo."
-        },
-        "visible": true,
-        "required": true,
-        "field_type": "custom",
-        "data_type": "decimal",
-        "placeholder": {
-          "pt_BR": "Selecione valor",
-          "en": "Select value"
-        }
-      },
-      {
-        "key": "date",
-        "name":{
-          "pt_BR": "Data da entrada",
-          "en": "Entry date"
-        },
-        "description": {
-          "pt_BR": "Data em que o pagamento foi aprovado.",
-          "en": "Date which payment was approved."
-        },
-        "visible": true,
-        "required": true,
-        "field_type": "custom",
-        "data_type": "string",
-        "placeholder": {
-          "pt_BR": "Selecione data",
-          "en": "Select date"
-        }
-      },
-      {
-        "key": "description",
-        "name": {
-          "pt_BR": "descrição",
-          "en": "description"
-        },
-        "description": {
-          "pt_BR": "Identifique quem é o cliente, associado ao recebível, no Nibo. Como padrão usamos o e-mail do seu cliente, mas você pode editá-lo.",
-          "en": "Identify who is the client, associate to income on Nibo. As default we use client e-mail, but feel free to edit it."
-        },
-        "visible": true,
-        "required": true,
-        "field_type": "custom",
-        "data_type": "string",
-        "placeholder": {
-          "pt_BR": "Selecione descrição",
-          "en": "Select description"
         }
       },
       {
@@ -238,7 +250,7 @@
     ]
   },
   "request": {
-  	"method_name": "/receipts?Organization={Organization}",
+    "method_name": "/schedules/credit?Organization={Organization}",
     "json_api": true,
     "error_fields": ["error", "error_description"],
     "pre_hooks": {
@@ -292,4 +304,5 @@
       ]
     }
   }
+
 }
