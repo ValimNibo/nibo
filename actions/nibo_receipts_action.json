@@ -1,0 +1,295 @@
+{
+  "name": {
+    "pt_BR": "criar um novo recebimento no Nibo",
+    "en": "create a new receipt in Nibo"
+  },
+  "action_key": "receipts",
+  "description": {
+    "pt_BR": "criar um novo recebimento no Nibo",
+    "en": "create a new receipt in Nibo"
+  },
+  "action_fields":{
+    "fields":[
+      {
+        "key": "Organization",
+        "label": {
+          "pt_BR": "Empresa",
+          "en": "Organization"
+        },
+        "description": {
+          "pt_BR": "Empresa",
+          "en": "Organization"
+        },
+        "visible": true,
+        "required": true,
+        "not_include_field_in_request": true,
+        "field_type": "dropdown",
+        "data_type": "string",
+        "list": {
+          "type": "remote",
+          "helper_method": "nibo_organizations_helper"
+        },
+        "placeholder": {
+          "pt_BR": "Selecione uma empresa",
+          "en": "Select an organization"
+        }
+      },
+      {
+        "key": "accountId",
+        "label":{
+          "pt_BR": "Conta",
+          "en": "Account"
+        },
+        "description":{
+          "pt_BR": "Conta existente na Nibo no qual será vinculada as entradas",
+          "en": "Nibo account that will be relation with the entries"
+        },
+        "visible": true,
+        "required": true,
+        "field_type": "dropdown",
+        "data_string": "string",
+        "list": {
+          "type": "remote",
+          "helper_method": "nibo_accounts_helper"
+        },
+        "placeholder": {
+          "pt_BR": "Selecionar conta",
+          "en": "Select account"
+        }
+      },
+      {
+        "key": "categoryId",
+        "label": {
+          "pt_BR": "Categoria",
+          "en": "Category"
+        },
+        "description": {
+          "pt_BR": "Categorias na Nibo.",
+          "en": "Categories of Nibo."
+        },
+        "visible": true,
+        "required": true,
+        "field_type": "dropdown",
+        "data_type": "string",
+        "list": {
+          "type": "remote",
+          "helper_method": "nibo_categories_helper"
+        },
+        "placeholder": {
+          "pt_BR": "Selecione uma categoria",
+          "en": "Select a category"
+        }
+      },
+      {
+        "key": "costCenterId",
+        "label": {
+          "pt_BR": "Centros de Custo",
+          "en": "Cost centers"
+        },
+        "description": {
+          "pt_BR": "Centros de custo na Nibo.",
+          "en": "Cost centers of Nibo."
+        },
+        "visible": true,
+        "required": true,
+        "field_type": "dropdown",
+        "data_type": "string",
+        "list": {
+          "type": "remote",
+          "helper_method": "nibo_cost_centers_helper"
+        },
+        "placeholder": {
+          "pt_BR": "Selecione um centro de custo",
+          "en": "Select a cost center"
+        }
+      },
+      {
+        "key": "value",
+        "name": {
+          "pt_BR": "Valor",
+          "en": "value"
+        },
+        "description": {
+          "pt_BR": "Valor que será incluído na sua conta do Nibo.",
+          "en": "Value that will be included in your account on Nibo."
+        },
+        "visible": true,
+        "required": true,
+        "field_type": "custom",
+        "data_type": "decimal",
+        "placeholder": {
+          "pt_BR": "Selecione valor",
+          "en": "Select value"
+        }
+      },
+      {
+        "key": "date",
+        "name":{
+          "pt_BR": "Data da entrada",
+          "en": "Entry date"
+        },
+        "description": {
+          "pt_BR": "Data em que o pagamento foi aprovado.",
+          "en": "Date which payment was approved."
+        },
+        "visible": true,
+        "required": true,
+        "field_type": "custom",
+        "data_type": "string",
+        "placeholder": {
+          "pt_BR": "Selecione data",
+          "en": "Select date"
+        }
+      },
+      {
+        "key": "description",
+        "name": {
+          "pt_BR": "descrição",
+          "en": "description"
+        },
+        "description": {
+          "pt_BR": "Identifique quem é o cliente, associado ao recebível, no Nibo. Como padrão usamos o e-mail do seu cliente, mas você pode editá-lo.",
+          "en": "Identify who is the client, associate to income on Nibo. As default we use client e-mail, but feel free to edit it."
+        },
+        "visible": true,
+        "required": true,
+        "field_type": "custom",
+        "data_type": "string",
+        "placeholder": {
+          "pt_BR": "Selecione descrição",
+          "en": "Select description"
+        }
+      },
+      {
+        "key": "customer_name",
+        "name": {
+          "pt_BR": "Nome do cliente.",
+          "en": "Customer's Name"
+        },
+        "description": {
+          "pt_BR": "Nome do cliente.",
+          "en": "Customer's Name"
+        },
+        "visible": true,
+        "required": true,
+        "field_type": "custom",
+        "data_type": "string",
+        "not_include_field_in_request": true,
+        "placeholder": {
+          "pt_BR": "Selecione nome do cliente",
+          "en": "Select customer's name"
+        }
+      },
+      {
+        "key": "customer_email",
+        "name": {
+          "pt_BR": "Email do cliente.",
+          "en": "Customer's Email"
+        },
+        "description": {
+          "pt_BR": "Email do cliente.",
+          "en": "Customer's Email"
+        },
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "string",
+        "not_include_field_in_request": true,
+        "placeholder": {
+          "pt_BR": "Selecione email do cliente",
+          "en": "Select customer's email"
+        }
+      },
+      {
+        "key": "customer_document_number",
+        "name": {
+          "pt_BR": "Número do Documento do cliente.",
+          "en": "Customer's Document Number"
+        },
+        "description": {
+          "pt_BR": "Número do Documento do cliente.",
+          "en": "Customer's Document Number"
+        },
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "string",
+        "not_include_field_in_request": true,
+        "placeholder": {
+          "pt_BR": "Selecione número documento do cliente",
+          "en": "Select customer's document number"
+        }
+      },
+      {
+        "key": "stakeholderId",
+        "name": {
+          "pt_BR": "stakeholderId",
+          "en": "stakeholderId"
+        },
+        "description": {
+          "pt_BR": "stakeholderId",
+          "en": "stakeholderId"
+        },
+        "field_type": "custom",
+        "data_type": "string",
+        "placeholder": {
+          "pt_BR": "stakeholderId",
+          "en": "stakeholderId"
+        }
+      }
+    ]
+  },
+  "request": {
+  	"method_name": "/receipts?Organization={Organization}",
+    "json_api": true,
+    "error_fields": ["error", "error_description"],
+    "pre_hooks": {
+      "hooks": [
+        {
+          "name": "Buscar cliente",
+          "request": {
+            "verb": "get",
+            "method_name": "/customers",
+            "params": [
+              {"field": "Organization", "value": "{Organization}", "type": "string"},
+              {"field": "$filter", "value": "document/number eq '{customer_document_number}' or email eq '{customer_email}' or name eq '{customer_name}'", "type": "string"}
+            ],
+            "response_field": ["items"]
+          }
+        },
+        {
+          "name": "Criar cliente",
+          "conditions": [[
+            {"field": "id", "condition": "equal", "value": null}
+          ]],
+          "request": {
+            "verb": "post",
+            "method_name": "/customers?Organization={Organization}",
+            "params": [
+              {"field": "Organization", "value": "{Organization}", "type": "string"},
+              {"field": "name", "value": "{customer_name}", "type": "string"},
+              {"field": "email", "value": "{customer_email}", "type": "string"},
+              {"field": "document.number", "value": "{customer_document_number}", "type": "string"}
+            ]
+          }
+        },
+        {
+          "name": "Buscar cliente",
+          "conditions": [[
+            {"field": "id", "condition": "equal", "value": null}
+          ]],
+          "request": {
+            "verb": "get",
+            "method_name": "/customers",
+            "params": [
+              {"field": "Organization", "value": "{Organization}", "type": "string"},
+              {"field": "$filter", "value": "document/number eq '{customer_document_number}' or email eq '{customer_email}' or name eq '{customer_name}'", "type": "string"}
+            ],
+            "response_field": ["items"]
+          }
+        }
+      ],
+      "append_fields": [
+        {"field": "stakeholderId", "value": "{id}", "type": "string"}
+      ]
+    }
+  }
+}
