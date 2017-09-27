@@ -1,6 +1,6 @@
 {
   "name": "Listar contas",
-  "helper_method_key": "nibo_v2_accounts",
+  "helper_method_key": "nibo_accounts_helper",
   "requests": [
     {
       "method_name": "/accounts",

@@ -27,7 +27,7 @@
         "data_type": "string",
         "list": {
           "type": "remote",
-          "helper_method": "nibo_v2_organizations"
+          "helper_method": "nibo_organizations_helper"
         },
         "placeholder": {
           "pt_BR": "Selecione uma empresa",
@@ -50,7 +50,7 @@
         "data_string": "string",
         "list": {
           "type": "remote",
-          "helper_method": "nibo_v2_accounts"
+          "helper_method": "nibo_accounts_helper"
         },
         "placeholder": {
           "pt_BR": "Selecionar conta",
@@ -73,7 +73,7 @@
         "data_type": "string",
         "list": {
           "type": "remote",
-          "helper_method": "nibo_v2_categories"
+          "helper_method": "nibo_categories_helper"
         },
         "placeholder": {
           "pt_BR": "Selecione uma categoria",
@@ -96,7 +96,7 @@
         "data_type": "string",
         "list": {
           "type": "remote",
-          "helper_method": "nibo_v2_cost_centers"
+          "helper_method": "nibo_cost_centers_helper"
         },
         "placeholder": {
           "pt_BR": "Selecione um centro de custo",
@@ -269,6 +269,18 @@
               {"field": "email", "value": "{customer_email}", "type": "string"},
               {"field": "document.number", "value": "{customer_document_number}", "type": "string"}
             ]
+          }
+        },
+        {
+          "name": "Buscar cliente",
+          "request": {
+            "verb": "get",
+            "method_name": "/customers",
+            "params": [
+              {"field": "Organization", "value": "{Organization}", "type": "string"},
+              {"field": "$filter", "value": "document/number eq '{customer_document_number}' or email eq '{customer_email}' or name eq '{customer_name}'", "type": "string"}
+            ],
+            "response_field": ["items"]
           }
         }
       ],

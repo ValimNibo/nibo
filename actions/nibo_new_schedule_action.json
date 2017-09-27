@@ -1,6 +1,5 @@
 {
-  "name":"Criar agendamento",
-  "action_key": "schedules/credit",
+  "action_key": "schedules_credit",
   "description":"É incluido um contas a receber no Nibo.",
   "action_fields":{
     "fields":[
@@ -23,7 +22,7 @@
         "data_type": "string",
         "list": {
           "type": "remote",
-          "helper_method": "nibo_v2_organizations"
+          "helper_method": "nibo_organizations_helper"
         },
         "placeholder": {
           "pt_BR": "Selecione uma empresa",
@@ -239,7 +238,7 @@
         "data_type": "string",
         "list": {
           "type": "remote",
-          "helper_method": "nibo_v2_categories"
+          "helper_method": "nibo_categories_helper"
         },
         "placeholder": {
           "pt_BR": "Selecione uma categoria",
@@ -267,7 +266,7 @@
         "data_type": "string",
         "list": {
           "type": "remote",
-          "helper_method": "nibo_v2_cost_centers"
+          "helper_method": "nibo_cost_centers_helper"
         },
         "placeholder": {
           "pt_BR": "Selecione um centro de custo",

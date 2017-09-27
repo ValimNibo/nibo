@@ -27,7 +27,7 @@
         "data_type": "string",
         "list": {
           "type": "remote",
-          "helper_method": "nibo_v2_organizations"
+          "helper_method": "nibo_organizations_helper"
         },
         "placeholder": {
           "pt_BR": "Selecione uma empresa",
@@ -90,7 +90,7 @@
         }
       ],
       "append_fields": [
-        {"field": "id", "value": "{id}", "type": "string"}
+        {"field": "id", "value": "id", "type": "object"}
       ]
     },
     "conditions": [[

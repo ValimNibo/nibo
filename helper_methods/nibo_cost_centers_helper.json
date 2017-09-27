@@ -1,9 +1,9 @@
 {
-  "name": "Listar categorias",
-  "helper_method_key": "nibo_v2_categories",
+  "name": "Listar centros de custo",
+  "helper_method_key": "nibo_cost_centers_helper",
   "requests": [
     {
-      "method_name": "/schedules/categories",
+      "method_name": "/costcenters",
       "response_field": "items",
       "params": {
         "Organization": "{Organization}"
@@ -11,11 +11,11 @@
       "mapping": {
         "label": {
           "fields": [
-            "name"
+            "description"
           ]
         },
         "value": {
-          "field": "id"
+          "field": "costCenterId"
         }
       }
     }
