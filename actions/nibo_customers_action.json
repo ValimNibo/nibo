@@ -90,11 +90,11 @@
         }
       ],
       "append_fields": [
-        {"field": "id", "value": "id", "type": "object"}
+        {"field": "id", "value": "{id}", "type": "string"}
       ]
     },
     "conditions": [[
-      {"field": "id", "condition": "equal", "value": null}
+      {"field": "id", "condition": "equal", "value": ""}
     ]]
   }
 }

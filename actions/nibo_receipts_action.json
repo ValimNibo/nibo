@@ -161,24 +161,6 @@
         }
       },
       {
-        "key": "isFlag",
-        "name": {
-          "pt_BR": "Favoritos",
-          "en": "Favorites"
-        },
-        "description": {
-          "pt_BR": "Selecionar como favorito.",
-          "en": "Select as favorite."
-        },
-        "visible": true,
-        "field_type": "custom",
-        "data_type": "boolean",
-        "placeholder": {
-          "pt_BR": "Selecione favorito",
-          "en": "Select favorite"
-        }
-      },
-      {
         "key": "customer_name",
         "name": {
           "pt_BR": "Nome do cliente.",
@@ -235,6 +217,23 @@
           "pt_BR": "Selecione número documento do cliente",
           "en": "Select customer's document number"
         }
+      },
+      {
+        "key": "stakeholderId",
+        "name": {
+          "pt_BR": "stakeholderId",
+          "en": "stakeholderId"
+        },
+        "description": {
+          "pt_BR": "stakeholderId",
+          "en": "stakeholderId"
+        },
+        "field_type": "custom",
+        "data_type": "string",
+        "placeholder": {
+          "pt_BR": "stakeholderId",
+          "en": "stakeholderId"
+        }
       }
     ]
   },
@@ -265,6 +264,7 @@
             "verb": "post",
             "method_name": "/customers?Organization={Organization}",
             "params": [
+              {"field": "Organization", "value": "{Organization}", "type": "string"},
               {"field": "name", "value": "{customer_name}", "type": "string"},
               {"field": "email", "value": "{customer_email}", "type": "string"},
               {"field": "document.number", "value": "{customer_document_number}", "type": "string"}
@@ -273,6 +273,9 @@
         },
         {
           "name": "Buscar cliente",
+          "conditions": [[
+            {"field": "id", "condition": "equal", "value": null}
+          ]],
           "request": {
             "verb": "get",
             "method_name": "/customers",
