@@ -104,8 +104,12 @@
         },
         "required": true,
         "visible": true,
-        "field_type":"integer",
-        "data_type":"integer"
+        "field_type": "custom",
+        "data_type": "string",
+        "placeholder": {
+          "pt_BR": "Selecione agendamento",
+          "en": "Select schedule"
+        }
       },
       {
         "key": "dueDate",
