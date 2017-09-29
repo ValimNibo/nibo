@@ -105,7 +105,8 @@
         "required": true,
         "visible": true,
         "field_type": "custom",
-        "data_type": "string",
+        "data_type": "datetime",
+        "date_format": "%Y-%m-%d %H:%M:%S",
         "placeholder": {
           "pt_BR": "Selecione agendamento",
           "en": "Select schedule"
@@ -124,7 +125,8 @@
         "visible": true,
         "required": true,
         "field_type": "custom",
-        "data_type": "string",
+        "data_type": "datetime",
+        "date_format": "%Y-%m-%d %H:%M:%S",
         "placeholder": {
           "pt_BR": "Selecione data",
           "en": "Select date"
