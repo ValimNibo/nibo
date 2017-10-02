@@ -166,7 +166,7 @@
           "en": "Cost centers of Nibo."
         },
         "visible": true,
-        "required": true,
+        "required": false,
         "field_type": "dropdown",
         "data_type": "string",
         "list": {
