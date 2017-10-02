@@ -65,7 +65,7 @@
           "en": "reference"
         },
         "visible": true,
-        "required": true,
+        "required": false,
         "field_type": "custom",
         "data_type": "string",
         "placeholder": {
