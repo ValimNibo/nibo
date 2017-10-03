@@ -280,7 +280,7 @@
           ]],
           "request": {
             "verb": "post",
-            "method_name": "/customers?Organization={Organization}",
+            "method_name": "/customers/FormatType=json?Organization={Organization}",
             "params": [
               {"field": "Organization", "value": "{Organization}", "type": "string"},
               {"field": "name", "value": "{customer_name}", "type": "string"},
@@ -289,22 +289,6 @@
             ]
           }
         },
-        {
-          "name": "Buscar cliente",
-          "conditions": [[
-            {"field": "id", "condition": "equal", "value": null}
-          ]],
-          "request": {
-            "verb": "get",
-            "method_name": "/customers",
-            "params": [
-              {"field": "Organization", "value": "{Organization}", "type": "string"},
-              {"field": "$filter", "value": "document/number eq '{customer_document_number}' or email eq '{customer_email}' or name eq '{customer_name}'", "type": "string"}
-            ],
-            "response_field": ["items"]
-          }
-        }
-      ],
       "append_fields": [
         {"field": "stakeholderId", "value": "{id}", "type": "string"}
       ]
