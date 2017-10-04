@@ -288,7 +288,8 @@
               {"field": "document.number", "value": "{customer_document_number}", "type": "string"}
             ]
           }
-        }],
+        }
+      ],
       "append_fields": [
         {"field": "stakeholderId", "value": "{id}", "type": "string"}
       ]

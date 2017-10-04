@@ -71,7 +71,7 @@
     ]
   },
   "request": {
-    "method_name": "/customers?Organization={Organization}",
+    "method_name": "/customers/FormatType=json?Organization={Organization}",
     "json_api": true,
     "error_fields": ["error", "error_description"],
     "pre_hooks": {
