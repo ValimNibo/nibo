@@ -209,6 +209,7 @@
           "en": "Customer's Email"
         },
         "visible": true,
+        "required": false,
         "field_type": "custom",
         "data_type": "string",
         "not_include_field_in_request": true,
@@ -228,6 +229,7 @@
           "en": "Customer's Document Number"
         },
         "visible": true,
+        "required": false,
         "field_type": "custom",
         "data_type": "string",
         "not_include_field_in_request": true,
