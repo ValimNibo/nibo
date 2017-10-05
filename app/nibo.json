@@ -23,7 +23,7 @@
       "authorize_url": "https://passport.nibo.com.br/authorize",
       "access_token_url": "https://passport.nibo.com.br/token",
       "refresh_token_url": "https://passport.nibo.com.br/token",
-      "redirect_uri": "https://homologdotmanagedot.pluga.co/oauth2/nibo",
+      "redirect_uri": "https://manage.pluga.co/oauth2/nibo",
       "access_token_placement": "header_bearer",
       "scope": [],
       "response_type": "code"
