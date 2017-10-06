@@ -260,7 +260,7 @@
   "request": {
     "method_name": "/schedules/credit?Organization={Organization}",
     "json_api": true,
-    "error_fields": ["error", "error_description"],
+   "error_fields": ["message"],
     "pre_hooks": {
       "hooks": [
         {
