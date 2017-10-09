@@ -241,7 +241,7 @@
     ]
   },
   "request": {
-    "method_name": "/schedules/credit?Organization={Organization}",
+    "method_name": "/payments?Organization={Organization}",
     "json_api": true,
     "error_fields": ["error_description"],
     "pre_hooks": {
@@ -265,7 +265,7 @@
           ]],
           "request": {
             "verb": "post",
-            "method_name": "/supplier/FormatType=json?Organization={Organization}",
+            "method_name": "/suppliers/FormatType=json?Organization={Organization}",
             "params": [
               {"field": "Organization", "value": "{Organization}", "type": "string"},
               {"field": "name", "value": "{supplier_name}", "type": "string"},
