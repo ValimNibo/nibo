@@ -243,11 +243,11 @@
   "request": {
     "method_name": "/schedules/credit?Organization={Organization}",
     "json_api": true,
-    "error_fields": ["message"],
+    "error_fields": ["error_description"],
     "pre_hooks": {
       "hooks": [
         {
-          "name": "Buscar cliente",
+          "name": "Buscar fornecedor",
           "request": {
             "verb": "get",
             "method_name": "/suppliers",
@@ -259,18 +259,18 @@
           }
         },
         {
-          "name": "Criar cliente",
+          "name": "Criar fornecedor",
           "conditions": [[
             {"field": "id", "condition": "equal", "value": null}
           ]],
           "request": {
             "verb": "post",
-            "method_name": "/customers/FormatType=json?Organization={Organization}",
+            "method_name": "/supplier/FormatType=json?Organization={Organization}",
             "params": [
               {"field": "Organization", "value": "{Organization}", "type": "string"},
-              {"field": "name", "value": "{customer_name}", "type": "string"},
-              {"field": "email", "value": "{customer_email}", "type": "string"},
-              {"field": "document.number", "value": "{customer_document_number}", "type": "string"}
+              {"field": "name", "value": "{supplier_name}", "type": "string"},
+              {"field": "email", "value": "{supplier_email}", "type": "string"},
+              {"field": "document.number", "value": "{supplier_document_number}", "type": "string"}
             ]
           }
         }
