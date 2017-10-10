@@ -3,7 +3,7 @@
     "pt_BR": "Criar despesas",
     "en": ""
   },
-  "action_key": "expenses",
+  "action_key": "payments",
   "description": {
     "pt_BR": "Criar despesas",
     "en": ""
@@ -241,7 +241,7 @@
     ]
   },
   "request": {
-    "method_name": "/schedules/credit?Organization={Organization}",
+    "method_name": "/payments?Organization={Organization}",
     "json_api": true,
     "error_fields": ["error_description"],
     "pre_hooks": {
