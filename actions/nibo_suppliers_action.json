@@ -1,0 +1,102 @@
+{
+  "name": {
+    "pt_BR": "criar um novo fornecedor no Nibo",
+    "en": "create a new supplier in Nibo"
+  },
+  "action_key": "customers",
+  "description": {
+    "pt_BR": "criar um novo fornecedor no Nibo",
+    "en": "create a new supplier in Nibo"
+  },
+  "action_fields": {
+    "fields": [
+      {
+        "key": "Organization",
+        "label": {
+          "pt_BR": "Empresa",
+          "en": "Organization"
+        },
+        "description": {
+          "pt_BR": "Empresa",
+          "en": "Organization"
+        },
+        "visible": true,
+        "required": true,
+        "not_include_field_in_request": true,
+        "field_type": "dropdown",
+        "data_type": "string",
+        "list": {
+          "type": "remote",
+          "helper_method": "nibo_organizations_helper"
+        },
+        "placeholder": {
+          "pt_BR": "Selecione uma empresa",
+          "en": "Select an organization"
+        }
+      },
+      {
+        "key": "name",
+        "name": { "pt_BR": "Nome", "en": "Name" },
+        "description": {
+          "pt_BR": "Nome do fornecedor",
+          "en": "Supplier's Name"
+        },
+        "visible": true,
+        "required": true,
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "email",
+        "name": { "pt_BR": "Email", "en": "Email" },
+        "description": {
+          "pt_BR": "Email do fornecedor",
+          "en": "Supplier's Email"
+        },
+        "visible": true,
+        "required": false,
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "document.number",
+        "name": { "pt_BR": "Documento", "en": "Document" },
+        "description": {
+          "pt_BR": "Documento do fornecedor",
+          "en": "Supplier's Document"
+        },
+        "visible": true,
+        "required": false,
+        "field_type": "custom",
+        "data_type": "string"
+      }
+    ]
+  },
+  "request": {
+    "method_name": "/suppliers/FormatType=json?Organization={Organization}",
+    "json_api": true,
+    "error_fields": ["error_description"],
+    "pre_hooks": {
+      "hooks": [
+        {
+          "name": "Buscar fornecedor",
+          "request": {
+            "verb": "get",
+            "method_name": "/suppliers",
+            "params": [
+              {"field": "Organization", "value": "{Organization}", "type": "string"},
+              {"field": "$filter", "value": "document/number eq '{document.number}' or email eq '{email}' or name eq '{name}'", "type": "string"}
+            ],
+            "response_field": ["items"]
+          }
+        }
+      ],
+      "append_fields": [
+        {"field": "id", "value": "{id}", "type": "string"}
+      ]
+    },
+    "conditions": [[
+      {"field": "id", "condition": "equal", "value": ""}
+    ]]
+  }
+}
